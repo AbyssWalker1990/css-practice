@@ -1,0 +1,32 @@
+TIPS:
+1. We can use reset for styling
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; // now include paddings and border to widths
+}
+
+2. Sizes:
+.container {
+    border: 2px dashed red;
+    font-size: 1.5rem;
+    margin: 1em;    // em lookf for font-size of container, so be the same
+    padding: 1em;
+}
+
+3. Margin and padding:
+.container {
+    border: 2px dashed red;
+    font-size: 1.5rem;
+    margin: 1.5em 2em;
+    /* margin-top: 1.5em;
+    margin-right: 2em;
+    margin-bottom: 2em;
+    margin-left: 2em; */
+    padding: 1em;
+}
+TOP -> RIGHT -> BOTTOM -> LEFT
+
+4. Outline: // like border but not bring space
+    outline: 5px solid purple;
+    outline-offset: 5px;
