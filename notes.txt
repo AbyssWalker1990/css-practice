@@ -30,3 +30,22 @@ TOP -> RIGHT -> BOTTOM -> LEFT
 4. Outline: // like border but not bring space
     outline: 5px solid purple;
     outline-offset: 5px;
+
+5. ORDER OF PSEUDOCLASSES FOR LINKS!!!
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: blue;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: dodgerblue;
+}
+
+a:active {
+    color: red;
+}
