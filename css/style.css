@@ -1,9 +1,14 @@
 body {
     padding: 10%;
     font-size: 2rem;
-    color: purple;
+    font-family: 'Roboto', sans-serif;
 }
 
-input, button {
+/* input, button {
     font: inherit;
+} */
+
+p {
+    line-height: 1.4;
+    font-style: normal;
 }
