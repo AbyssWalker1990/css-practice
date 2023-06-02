@@ -37,6 +37,22 @@ header, footer {
     text-align: center;
 }
 
+/* EXAMPLES IS AND WHERE */
+/* :is(header, footer) {  // Will have specificite and if we add class to it
+    position: sticky;   // we will have problem with overwriting header or footer 
+    background-color: #1E293B;
+    color: whitesmoke;
+    text-align: center;
+} */
+
+/* :where(header, footer) { // Have no specificity
+    position: sticky;
+    background-color: #1E293B;
+    color: whitesmoke;
+    text-align: center;
+} */
+/* END EXAMPLES */
+
 header {
     top: 0;
 }
@@ -50,12 +66,17 @@ nav {
     justify-content: space-evenly;
 }
 
-nav a, nav a:visited {
+/* nav a, nav a:visited { */
+nav a:any-link {
     color: #000;
 }
 
-nav a:hover, nav a:focus {
+nav :is(a:hover, a:focus) {
     color: hsla(0, 0%, 20%, 0.6)
+}
+
+nav a:active {
+    color: red;
 }
 
 main {
@@ -85,6 +106,10 @@ footer {
     align-items: center;
 }
 
+.card:target {
+    border: 2px solid rebeccapurple;
+}
+
 .card figure {
     display: flex;
     flex-flow: column nowrap;
@@ -95,11 +120,61 @@ footer {
     border-radius: 50%;
 }
 
+/* CHECK PAGE IF ALL IMG HAVE ALT ATTR */
+.card img:not([alt]) {
+    border: 10px solid red
+}
+
+/* SELECT ODD CARD // Also can be index or even */
+.card:nth-child(odd) {
+    background-color: papayawhip;
+}
+
 .card figcaption {
     font-weight: bolder;
     font-size: 2rem;
     margin: 1rem;
     text-align: center;
+}
+
+/* ADD PSEUDO ELEMENT */
+.card figcaption::after {
+    content: ' 🔥';
+    display: block;
+}
+/* .card figcaption::before {
+    content: ' 🔥';
+    display: block;
+} */
+
+/* SELECT FIRST LETTER */
+.card figcaption::first-letter {
+    font-size: 3rem;
+}
+
+/* SELECT FIRST LINE */
+/* .card figcaption::first-line {
+    font-size: 3rem;
+} */
+
+.card p {
+    position: relative;
+}
+
+/* ADD QOUTES */
+.card p::before {
+    content: open-quote;
+    font-size: 3em;
+    position: absolute;
+    top: -0.25em;
+    left: -0.5em;
+}
+.card p::after {
+    content: close-quote;
+    font-size: 3em;
+    position: absolute;
+    top: -0.25em;
+    right: -0.5em;
 }
 
 /* || SMALL */
